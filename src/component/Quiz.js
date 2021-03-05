@@ -95,7 +95,7 @@ import QuizOptions from './QuizOptions'
                 correct: true,
                 gameOver: true,
                 game_response: 'Kudos! You are absolutely correct. Play Again',
-                game_response_class: 'after correct'
+                game_response_class: 'after correct animate__animated animate__fadeInRight'
             })
         }else{
             console.log(`Wrong! ${option} is not the answer`)
@@ -103,14 +103,14 @@ import QuizOptions from './QuizOptions'
                 correct: false,
                 gameOver: true,
                 game_response: 'Opps! You did not get lucky. Game Over | Play Again',
-                game_response_class: 'after wrong'
+                game_response_class: 'after wrong animate__animated animate__fadeInLeft'
             }) 
         }    
     }
 
     renderOptions(){
         return (
-            <div className="options text-center">
+            <div className="options text-center animate__animated animate__bounce animate__repeat-2">
                 {this.state.riddle.resultsArray.map((result, i)=>
                     <QuizOptions options={result} key={i}  checkResult={this.checkResult} />
                 )}
